@@ -44,6 +44,7 @@ test.describe.serial("checkout tests", () => {
     );
     await expect(numberOfItems).toHaveCount(desiredNumberOfItems);
   });
+
   test("user is able to add random item to cart then check if cart icon shows proper number and check if the proper price is shown on cart page", async () => {
     await inventoryPage.addItemToCart(randomItem);
     await page.waitForSelector(
@@ -66,10 +67,12 @@ test.describe.serial("checkout tests", () => {
       page.locator(cartPageSelectors.containers.cartItemPrice)
     ).toHaveText(price);
   });
+
   test("user is able to proceed to checkout", async () => {
     await cartPage.clickCheckout();
     await page.waitForURL("**/checkout-step-one.html");
   });
+
   test("user is unable to continue without filling checkout form with all required data", async () => {
     await checkoutPage.clickContinue();
     await page.waitForSelector(
@@ -86,14 +89,17 @@ test.describe.serial("checkout tests", () => {
       `text=${checkoutPageSelectors.validations.postalCodeIsRequired}`
     );
   });
+
   test("user is able to continue after filling checkout form with required data", async () => {
     await checkoutPage.fillPostalCode(fakeUserData.postalCode);
     await checkoutPage.clickContinue();
     await page.waitForURL("**/checkout-step-two.html");
   });
+
   test(`user is able to see that the shipping information is '${shippingMessage}'`, async () => {
     await page.waitForSelector(`text=${shippingMessage}`);
   });
+
   test(`user is able to see confirmation message: '${thankYouMessage}'`, async () => {
     await checkoutPage.clickFinish();
     await expect(
