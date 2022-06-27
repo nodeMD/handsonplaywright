@@ -8,7 +8,7 @@ set environmental variables:
 1. create `.env` file in main directory
 2. copy content of `.env.example` to `.env` file
 3. fill **all** the variables with data, like shown on this single example:
-`TEST_USERNAME=standard_user`
+`BASE_URL=https://www.saucedemo.com`
 
 start all tests:
 `npm test`
