@@ -19,4 +19,8 @@ export const checkoutPageSelectors = {
     lastNameIsRequired: "Error: Last Name is required",
     postalCodeIsRequired: "Error: Postal Code is required",
   },
+  messages: {
+    shippingMessage: "FREE PONY EXPRESS DELIVERY!",
+    thankYouMessage: "THANK YOU FOR YOUR ORDER",
+  },
 };
