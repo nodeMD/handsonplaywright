@@ -1,4 +1,4 @@
-import { Page } from "@playwright/test";
+import { expect, Page } from "@playwright/test";
 import { checkoutPageSelectors } from "../selectors/checkoutPage";
 
 export class CheckoutPage {
@@ -27,5 +27,11 @@ export class CheckoutPage {
   }
   async clickFinish() {
     await this.page.locator(checkoutPageSelectors.buttons.finish).click();
+  }
+  async checkValidation(validation: string) {
+    await this.page.waitForSelector(`text=${validation}`);
+  }
+  async checkMessageOnSelector(selector: string, message: string) {
+    await expect(this.page.locator(selector)).toHaveText(message);
   }
 }

@@ -61,18 +61,18 @@ test.describe.serial("checkout tests", () => {
 
   test("user is unable to continue without filling checkout form with all required data", async () => {
     await checkoutPage.clickContinue();
-    await page.waitForSelector(
-      `text=${checkoutPageSelectors.validations.firstNameIsRequired}`
+    await checkoutPage.checkValidation(
+      checkoutPageSelectors.validations.firstNameIsRequired
     );
     await checkoutPage.fillFirstName(fakeUserData.name);
     await checkoutPage.clickContinue();
-    await page.waitForSelector(
-      `text=${checkoutPageSelectors.validations.lastNameIsRequired}`
+    await checkoutPage.checkValidation(
+      checkoutPageSelectors.validations.lastNameIsRequired
     );
     await checkoutPage.fillLastName(fakeUserData.lastName);
     await checkoutPage.clickContinue();
-    await page.waitForSelector(
-      `text=${checkoutPageSelectors.validations.postalCodeIsRequired}`
+    await checkoutPage.checkValidation(
+      checkoutPageSelectors.validations.postalCodeIsRequired
     );
   });
 
@@ -83,15 +83,17 @@ test.describe.serial("checkout tests", () => {
   });
 
   test(`user is able to see that the shipping information is '${checkoutPageSelectors.messages.shippingMessage}'`, async () => {
-    await page.waitForSelector(
-      `text=${checkoutPageSelectors.messages.shippingMessage}`
+    await checkoutPage.checkMessageOnSelector(
+      checkoutPageSelectors.labels.deliverySummary,
+      checkoutPageSelectors.messages.shippingMessage
     );
   });
 
   test(`user is able to see confirmation message: '${checkoutPageSelectors.messages.thankYouMessage}'`, async () => {
     await checkoutPage.clickFinish();
-    await expect(
-      page.locator(checkoutPageSelectors.headers.complete)
-    ).toHaveText(checkoutPageSelectors.messages.thankYouMessage);
+    await checkoutPage.checkMessageOnSelector(
+      checkoutPageSelectors.headers.complete,
+      checkoutPageSelectors.messages.thankYouMessage
+    );
   });
 });

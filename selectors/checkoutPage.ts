@@ -9,7 +9,7 @@ export const checkoutPageSelectors = {
     continue: "#continue",
   },
   labels: {
-    summary: ".summary_value_label",
+    deliverySummary: ".summary_value_label:nth-child(4)",
   },
   headers: {
     complete: ".complete-header",
