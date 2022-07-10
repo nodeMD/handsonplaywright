@@ -12,22 +12,20 @@ test.describe("login tests", () => {
     loginPage = new LoginPage(page);
   });
 
-  test("user should not be able to log in to app when using wrong login data", async ({
-    page,
-  }) => {
+  test("user should not be able to log in to app when using wrong login data", async () => {
     await loginPage.submitLoginForm();
-    await page.waitForSelector(
-      `text=${loginPageSelectors.validations.usernameIsRequired}`
+    await loginPage.checkValidation(
+      loginPageSelectors.validations.usernameIsRequired
     );
     await loginPage.fillUsername(fakeUserData.email.withoutAtSign);
     await loginPage.submitLoginForm();
-    await page.waitForSelector(
-      `text=${loginPageSelectors.validations.passwordIsRequired}`
+    await loginPage.checkValidation(
+      loginPageSelectors.validations.passwordIsRequired
     );
     await loginPage.fillPassword(fakeUserData.password.onlyLowerCaseLetters);
     await loginPage.submitLoginForm();
-    await page.waitForSelector(
-      `text=${loginPageSelectors.validations.userNotFound}`
+    await loginPage.checkValidation(
+      loginPageSelectors.validations.userNotFound
     );
   });
 

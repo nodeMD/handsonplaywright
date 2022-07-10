@@ -17,9 +17,12 @@ export class LoginPage {
   async submitLoginForm() {
     await this.page.locator(loginPageSelectors.buttons.logIn).click();
   }
-  async fillAndSubmitLoginForm(username: any, password: any) {
+  async fillAndSubmitLoginForm(username, password) {
     await this.fillUsername(username);
     await this.fillPassword(password);
     await this.submitLoginForm();
+  }
+  async checkValidation(validation: string) {
+    await this.page.waitForSelector(`text=${validation}`);
   }
 }
