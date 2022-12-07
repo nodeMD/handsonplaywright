@@ -30,3 +30,7 @@ open your repository `Settings`
 then click on `Secrets` -> `Actions`
 next click button `New repository secret` and
 add secrets for **all** environmental variables from `.env.example` file
+
+# Docker
+to run on docker
+`docker build -t e2etests .`
