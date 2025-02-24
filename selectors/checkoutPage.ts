@@ -20,7 +20,7 @@ export const checkoutPageSelectors = {
     postalCodeIsRequired: "Error: Postal Code is required",
   },
   messages: {
-    shippingMessage: "FREE PONY EXPRESS DELIVERY!",
-    thankYouMessage: "THANK YOU FOR YOUR ORDER",
+    shippingMessage: "Free Pony Express Delivery!",
+    thankYouMessage: "Thank you for your order!",
   },
 };
