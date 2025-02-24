@@ -1,5 +1,5 @@
 import { expect, Page } from "@playwright/test";
-import { checkoutPageSelectors } from "../selectors/checkoutPage";
+import { checkoutPageSelectors } from "./checkout.page.selectors";
 
 export class CheckoutPage {
   constructor(readonly page: Page) {
@@ -7,17 +7,14 @@ export class CheckoutPage {
   }
 
   async fillFirstName(name: string) {
-    await this.page.locator(checkoutPageSelectors.inputs.firstName).fill("");
     await this.page.locator(checkoutPageSelectors.inputs.firstName).fill(name);
   }
   async fillLastName(lastName: string) {
-    await this.page.locator(checkoutPageSelectors.inputs.lastName).fill("");
     await this.page
       .locator(checkoutPageSelectors.inputs.lastName)
       .fill(lastName);
   }
   async fillPostalCode(postalCode: string) {
-    await this.page.locator(checkoutPageSelectors.inputs.postalCode).fill("");
     await this.page
       .locator(checkoutPageSelectors.inputs.postalCode)
       .fill(postalCode);
