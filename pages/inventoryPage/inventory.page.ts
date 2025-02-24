@@ -1,5 +1,5 @@
 import { expect, Page } from "@playwright/test";
-import { inventoryPageSelectors } from "../selectors/inventoryPage";
+import { inventoryPageSelectors } from "./inventory.page.selectors";
 
 export class InventoryPage {
   constructor(readonly page: Page) {
