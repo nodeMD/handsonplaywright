@@ -1,3 +1,5 @@
+![example workflow](https://github.com/nodeMD/handsonplaywright/actions/workflows/playwright.yml/badge.svg)
+
 Playwright E2E tests
 
 # Quick start guide:
