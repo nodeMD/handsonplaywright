@@ -1,5 +1,5 @@
 import { Page } from "@playwright/test";
-import { loginPageSelectors } from "../selectors/loginPage";
+import { loginPageSelectors } from "./login.page.selectors";
 
 export class LoginPage {
   constructor(readonly page: Page) {
