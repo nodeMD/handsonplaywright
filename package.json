@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "playwright test",
-    "test-headed": "playwright test --headed",
+    "test:headed": "playwright test --headed",
     "lint": "eslint --ext .ts ./ --color",
-    "lint-fix": "eslint --ext .ts ./ --color --fix",
+    "lint:fix": "eslint --ext .ts ./ --color --fix",
     "format": "prettier --write ./**/*.ts"
   },
   "keywords": [],

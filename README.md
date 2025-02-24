@@ -17,7 +17,7 @@ start all tests:
 `npm test`
 
 start with browsers UI:
-`npm run test-headed`
+`npm run test:headed`
 
 format tests code:
 `npm run format`
@@ -26,7 +26,7 @@ check test code linting:
 `npm run lint`
 
 fix test code linting:
-`npm run lint-fix`
+`npm run lint:fix`
 
 # To setup github actions
 open your repository `Settings`
