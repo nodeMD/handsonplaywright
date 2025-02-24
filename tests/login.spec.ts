@@ -1,7 +1,7 @@
 import { test } from "@playwright/test";
-import { generateFakeUserData, validUser } from "../methods/generateData";
-import { LoginPage } from "../methods/loginPage";
-import { loginPageSelectors } from "../selectors/loginPage";
+import { generateFakeUserData, validUser } from "../utils/generateData";
+import { LoginPage } from "../pages/loginPage/login.page";
+import { loginPageSelectors } from "../pages/loginPage/login.page.selectors";
 
 const fakeUserData = generateFakeUserData();
 
