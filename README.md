@@ -4,6 +4,9 @@ Playwright E2E tests
 install all dependencies:
 `npm i`
 
+to install all playwright browsers run:
+`npx install playwright`
+
 set environmental variables:
 1. create `.env` file in main directory
 2. copy content of `.env.example` to `.env` file
